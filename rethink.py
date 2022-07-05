@@ -101,6 +101,9 @@ rethink.db('library').table('authors')\
 data = rethink.db('library').table('users').pluck(['name', 'last_name']).order_by(rethink.desc('last_name')).limit(3).run()
 print(data)
 
+# count users
+user_count = rethink.db('library').table('users').count().run()
+print(user_count)
 
 
 
