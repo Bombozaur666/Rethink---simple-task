@@ -105,6 +105,9 @@ print(data)
 user_count = rethink.db('library').table('users').count().run()
 print(user_count)
 
+# distinct books list
+book_list = rethink.db('library').table('books').pluck('title').distinct().run()
+print(book_list)
 
 
 
