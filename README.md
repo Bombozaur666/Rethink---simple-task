@@ -4,13 +4,16 @@
 Simple task of usage Rethink. 
 We will use this to build simple library database
 
+This program is written in python (rethink.py) and JS (README).
 
 #
 
+## Requirements
+Are located in requirements.txt
 
 ## Instalation
-
 You can instal Rethink from this link [https://rethinkdb.com/docs/install/](https://rethinkdb.com/docs/install/)
+
 ## Create Database
 First step is to create database. Let's name it 'library'.
 
