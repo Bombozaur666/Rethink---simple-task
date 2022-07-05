@@ -97,7 +97,9 @@ rethink.db('library').table('authors')\
 }).run()
 """
 
-
+# retrieve some data
+data = rethink.db('library').table('users').pluck(['name', 'last_name']).order_by(rethink.desc('last_name')).limit(3).run()
+print(data)
 
 
 
