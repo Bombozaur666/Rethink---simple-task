@@ -50,13 +50,14 @@ rethink.db('library').table('address').insert([
     {'city': 'Warszawa', 'postal_code': '00-002', 'street': 'Lanckorońska', 'hause_number': '3', 'flat_number': '7'},
     {'city': 'Warszawa', 'postal_code': '00-002', 'street': 'Przestrzenna', 'hause_number': '5B', 'flat_number': '7'},
 ]).run()
-"""
+
 rethink.db('library').table('authors').insert([
   {'name': 'William', 'last_name': 'Shakespeare', 'country': 'England', 'year_of_birth': '1564', 'year_of_death': '1616', },
   {'name': 'Andrzej', 'last_name': 'Sapkowski', 'country': 'Poland', 'year_of_birth': '1948', 'year_of_death': '', },
   {'name': 'Jacek', 'last_name': 'Piekara', 'country': 'Poland', 'year_of_birth': '1965 ', 'year_of_death': '', },
   {'name': 'John', 'last_name': 'Tolkien', 'country': 'England', 'year_of_birth': '', 'year_of_death': '', },
 ]).run()
+
 rethink.db('library').table('books').insert([
   {'title': 'Macbeth', 'author': '09d3ca27-d906-4c81-93d0-4623c901f835', 'year': 1606, 'ISBN': '9780140707052', 'is_borrowed': 'true'},
   {'title': 'Macbeth', 'author': '09d3ca27-d906-4c81-93d0-4623c901f835', 'year': 1606, 'ISBN': '9780140707052', 'is_borrowed': 'false'},
@@ -68,6 +69,7 @@ rethink.db('library').table('books').insert([
   {'title': 'Alicja', 'author': '30fbd29a-2ac7-45b9-8ee4-875f606f3f97', 'year': 2007, 'ISBN': '9788375742008', 'is_borrowed': 'false'},
   {'title': 'Krew elfów', 'author': '3ca2bd3a-5169-42fb-afb6-bfd69b336251', 'year': 1994, 'ISBN': '9780316029193', 'is_borrowed': 'false'},
 ]).run()
+
 rethink.db('library').table('users').insert([
   {'name': 'Adrian', 'last_name': 'Elwi', 'address': '1b5f0315-56b6-4c77-8f88-20628de770f0', 'date_of_birth': '05-06-1992', 'sex': 'male'},
   {'name': 'Karolina', 'last_name': 'Grechuta', 'address': '378afea8-8a31-4a9d-aaf7-0fb7c724fe21', 'date_of_birth': '23-01-2005', 'sex':'female'},
@@ -75,6 +77,7 @@ rethink.db('library').table('users').insert([
   {'name': 'Garwazy', 'last_name': 'Trąbke', 'address': '4eec8c20-d9f9-442f-97aa-933aaf27bc41', 'date_of_birth': '01-01-1905', 'sex':'male'},
   {'name': 'Alucja', 'last_name': 'Gawryl', 'address': '66a269f2-8dfd-4979-8ca5-a2017bf524a3', 'date_of_birth': '04-12-1997', 'sex':'female'},
 ]).run()
+
 rethink.db('library').table('rental').insert([
   {'book_id': '2c0d8657-ee5c-4249-be88-707358de8d1b', 'user_id': '3c52b17d-ccd7-4a36-812e-3dfdfb09c248', 'date_of_loan': '24-04-2022', 'date_of_return': ''},
   {'book_id': 'f753819d-1327-4443-bb25-ef8fbee9fb9b', 'user_id': '3c52b17d-ccd7-4a36-812e-3dfdfb09c24', 'date_of_loan': '02-12-2021', 'date_of_return': ''},
@@ -85,6 +88,14 @@ rethink.db('library').table('rental').insert([
 ]).run()
 
 
+# update table
+rethink.db('library').table('authors')\
+    .filter({'id': '3fd60678-9b18-47e3-abc1-ca2adaed5221'})\
+    .update({
+        'year_of_birth': 1892,
+        'year_of_death': 1973,
+}).run()
+"""
 
 
 
