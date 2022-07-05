@@ -164,7 +164,7 @@ To show user cities we use:
 ```
 r.db('library').table('address').pluck('city').distinct()
 ```
-## Filtring
+## Filtering 
 
 To show all books writen by Tolkien we need to use filtring. 
 
