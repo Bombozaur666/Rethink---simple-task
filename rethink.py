@@ -116,6 +116,10 @@ print(book_list)
 # filtering
 rethink.db('library').table('books').filter({'author': 'd192f8d8-b727-4b86-afe9-831cbc90ae3f'})
 
+# join tables
+join_tables = rethink.db('library').table('books').eq_join('author', rethink.db('library').table('authors')).zip()
+print(join_tables)
+
 
 
 
