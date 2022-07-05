@@ -105,9 +105,16 @@ print(data)
 user_count = rethink.db('library').table('users').count().run()
 print(user_count)
 
+# all books list
+all_books = book_list = rethink.db('library').table('books').pluck('title').run()
+print(all_books)
+
 # distinct books list
 book_list = rethink.db('library').table('books').pluck('title').distinct().run()
 print(book_list)
+
+# filtering
+rethink.db('library').table('books').filter({'author': 'd192f8d8-b727-4b86-afe9-831cbc90ae3f'})
 
 
 
